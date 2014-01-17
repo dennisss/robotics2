@@ -1,0 +1,36 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+td.post_title {
+	color: #326e6e;
+	font-family: "Pathway Gothic One";
+	font-size: 25px;
+}
+
+
+td.post_text {
+	width: 55%;
+	font-family: "Arial";
+	font-size: 20px;
+	line-height: 150%;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+p {
+	padding-top: -10px;
+	font-family: "Pathway Gothic One";
+	font-size: 14px;
+}
+	
+h2 {
+	color: #326e6e;
+	font-family: "Pathway Gothic One";
+	font-size: 25px;
+}
+
+a:visited {
+	color: #4EA8F2;
+}

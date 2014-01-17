@@ -1,0 +1,60 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.post_summary {
+	width: 55%;
+
+				td.post_title {
+					margin-left: 0px;
+					color: black;
+					font-family: "Pathway Gothic One";
+					font-size: 25px;
+				}
+
+
+				td.summary_text {
+					padding-top: 20px;
+					padding-bottom: 50px;
+					width: 55%;
+					font-family: "Arial";
+					font-size: 20px;
+					line-height: 150%;
+				}
+
+}
+
+
+
+h2 {
+	color: black;
+	font-family: "Pathway Gothic One";
+	font-size: 25px;
+	text-decoration: underline;
+}
+
+h1 {
+	color: black;
+	font-family: "Pathway Gothic One";
+	font-size: 25px;
+}
+
+a:visited {
+	color: black;
+}
+
+span.post_title {
+	margin-left: 0px;
+	color: black;
+	font-family: "Pathway Gothic One";
+	font-size: 25px;
+}
+
+div.post_text {
+	padding-top: 20px;
+	padding-bottom: 50px;
+	width: 65%;
+	font-family: "Arial";
+	font-size: 18px;
+	line-height: 150%;
+}

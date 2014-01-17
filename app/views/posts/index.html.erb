@@ -1,0 +1,14 @@
+<div class="container">
+		<table class="post_summary">
+		 
+		  <% @posts.each do |post| %>
+			<tr>
+			  <td class="post_title"><%= post.date %>:  <%= link_to post.title, post_url(post) %></span></td>
+				</tr>
+			<tr>
+			  <td class="post_text"><%= post.text.gsub(/\n/, '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;').html_safe %></td>
+				</tr>
+		  <% end %>
+
+		</table>
+</div>

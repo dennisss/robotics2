@@ -1,0 +1,29 @@
+<p>
+  <span class="post_title"><%= @post.title %></span>
+</p>
+
+<a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this article " + <%= request.original_url %> title="Share by Email"><img src="http://png-2.findicons.com/files/icons/573/must_have/48/mail.png"/></a>
+<p>Share this article</p>
+ 
+<p>
+  <div class="post_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @post.text.gsub(/\n/, '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;').html_safe %></div>
+</p>
+
+
+<% if cookies.has_key?(:remember_token) and User.find_by_remember_token(cookies[:remember_token]) %>
+	<h2>Add a comment:</h2>
+	<%= form_for([@post, @post.comments.build]) do |f| %>
+	  <p>
+	    <%= f.text_area :body, cols: 80, rows: 15  %>
+	  </p>
+		<%= f.hidden_field :user_id, :value => User.find_by_remember_token(cookies[:remember_token]).id %>
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+<% end %>
+
+	<% if @post.comments.all.size > 0 %>
+		<h2>Comments</h2>
+		<%= render @post.comments %>
+	<% end %>

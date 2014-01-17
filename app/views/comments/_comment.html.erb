@@ -1,0 +1,8 @@
+<% if comment.body %>
+	</br>
+	<strong class="comment_userid"><%= User.find(comment.user_id).name %></strong>
+	<p class="comment_body">
+	  <%= comment.body %>
+	</p>
+	<hr>
+<% end %>
