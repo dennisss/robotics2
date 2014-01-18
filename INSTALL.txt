@@ -1,0 +1,24 @@
+To contribute to this site you must install Rails:
+--------------------------------------------------------
+
+Install Ruby Version Manager
+
+1. sudo apt-get update
+2. sudo apt-get install curl
+3. \curl -L https://get.rvm.io | bash -s stable
+4. source ~/.rvm/scripts/rvm
+5. rvm requirements
+
+Install Ruby
+
+1. rvm install ruby
+2. rvm use ruby --default
+
+Install RubyGems
+
+1.  rvm rubygems current
+
+Install Rails
+
+1. gem install rails
+--------------------------------------------------------
