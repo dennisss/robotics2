@@ -1,13 +1,18 @@
 <div class="container">
-	<table class="post_summary">
+				<div class="jumbotron col-lg-12">
+					<h1>The Drexel Robotics Club</h1>
+					<p>This is a prototype of the Robotics Club website. Currently being developed in Ruby on Rails with Twitter Bootstrap CSS.</p>
+				</div>
+</div>
+
+<div class="container">
+	<table class="table table-hover">
 	 
 	  <% @posts.each do |post| %>
 		<tr>
-		  <td class="post_title"><%= post.date %>:  <%= link_to post.title, post_url(post) %></td>
-			</tr>
-		<tr>
+		  <th class="post_title col-xs-2"><%= post.date %>:  <%= link_to post.title, post_url(post) %></td>
 		  <td class="summary_text"><%= truncate(post.text, :length => 1000, :separator => ' ').gsub(/\n/, '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;').html_safe %></td>
-			</tr>
+		</tr>
 	  <% end %>
 
 	</table>

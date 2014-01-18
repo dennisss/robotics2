@@ -14,6 +14,7 @@
 -->
 
 	<%= stylesheet_link_tag "css/bootstrap.css" %>
+	<link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template 
     <link href="navbar-static-top.css" rel="stylesheet">
@@ -71,41 +72,26 @@
       </div>
     </div>
 
-	<link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 
-	<div class="banner">
 
-				<form class="form-inline" role="form">
-				  <div class="form-group">
-					<label class="sr-only" for="exampleInputEmail2">Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-				  </div>
-				  <div class="form-group">
-					<label class="sr-only" for="exampleInputPassword2">Password</label>
-					<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-				  </div>
-				  <div class="checkbox">
-					<label>
-					  <input type="checkbox"> Remember me
-					</label>
-				  </div>
-				  <button type="submit" class="btn btn-default">Sign in</button>
-				</form>
-
-			<div class="user_info">
+			<div class="banner">
+				<div class="col-xs-1">
 				<% if cookies.has_key?(:remember_token) and User.find_by_remember_token(cookies[:remember_token]) %>
-					logged in as <%= User.find_by_remember_token(cookies[:remember_token]).name %> <%= button_to 'Sign out', {:controller=> "sessions", :action=> "destroy"}, :method=> :delete %>
+					<h4>logged in as</h4> 
+					<p class="lead"><%= User.find_by_remember_token(cookies[:remember_token]).name %></p> 
+					<%= button_to 'Sign out', {:controller=> "sessions", :action=> "destroy"}, :method=> :delete, class: "btn btn-default" %>
 				<% else %>
-					<%= form_for :session, url: sessions_path do |u| %>
-						<%= u.label :email %>
-						<%= u.text_field :user_email %>
+					<%= form_for :session, url: sessions_path, class: "form-inline" do |u| %>
+						<%= u.label :email, class: "sr-only" %>
+						<%= u.text_field :user_email, class: "form-control", placeholder: "Enter email" %>
 
-						<%= u.label :password %>
-						<%= u.password_field :password %>
-						<%= u.submit  value: 'login' %>
+						<%= u.label :password, class: "sr-only" %>
+						<%= u.password_field :password, class: "form-control", placeholder: "Enter password" %>
+						<%= u.submit  value: 'login', class: "btn btn-default" %>
 					<% end %>
 					Not Registered? <%= link_to 'CREATE ACCOUNT', new_user_url %>
 				<% end %>
+				</div>
 			</div>
 
 <%= yield %>
