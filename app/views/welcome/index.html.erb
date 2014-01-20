@@ -1,19 +1,20 @@
 <div class="container">
-				<div class="jumbotron col-lg-12">
+				<div class="jumbotron col-lg-10">
 					<h1>The Drexel Robotics Club</h1>
 					<p>This is a prototype of the Robotics Club website. Currently being developed in Ruby on Rails with Twitter Bootstrap CSS.</p>
 				</div>
 </div>
 
 <div class="container">
-	<table class="table table-hover">
-	 
-	  <% @posts.each do |post| %>
-		<tr>
-		  <th class="post_title col-xs-2"><%= post.date %>:  <%= link_to post.title, post_url(post) %></td>
-		  <td class="summary_text"><%= truncate(post.text, :length => 1000, :separator => ' ').gsub(/\n/, '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;').html_safe %></td>
-		</tr>
-	  <% end %>
-
-	</table>
+	<div class="col-md-10 col-md-offset-1">
+		<table class="table table-hover">
+		 
+		  <% @posts.each do |post| %>
+			<tr>
+			  <th class="post_title col-xs-2"><%= post.date %>:  <%= link_to post.title, post_url(post) %></td>
+			  <td class="summary_text"><%= truncate(post.text, :length => 1000, :separator => ' ').gsub(/\n/, '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;').html_safe %></td>
+			</tr>
+		  <% end %>
+		</table>
+	</div>
 </div>

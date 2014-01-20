@@ -16,7 +16,7 @@
 					<h2>Add a comment:</h2>
 					<%= form_for([@post, @post.comments.build]) do |f| %>
 						<p>
-							<%= f.text_area :body, cols: 80, rows: 15, class: "form-control"  %>
+							<%= f.text_area :body, cols: 17, rows: 8, class: "form-control"  %>
 						</p>
 						<%= f.hidden_field :user_id, :value => User.find_by_remember_token(cookies[:remember_token]).id %>
 						<p>
@@ -27,7 +27,10 @@
 		</div>
 </div>
 
+<div class="container">
 	<% if @post.comments.all.size > 0 %>
 		<h2>Comments</h2>
+		<hr>
 		<%= render @post.comments %>
 	<% end %>
+</div>
