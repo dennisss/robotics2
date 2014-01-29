@@ -21,4 +21,16 @@ Install RubyGems
 Install Rails
 
 1. gem install rails
+
+Note: Execute all commands from now on in the root directory of the project
+Setup environment
+
+1. bundle install
+2. rake db:migrate
+3. rake db:seed
+
+Start Server on 127.0.0.1:3000
+
+1. rails server
+
 --------------------------------------------------------

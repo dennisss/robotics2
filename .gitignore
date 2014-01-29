@@ -1,0 +1,9 @@
+# Makes git ignore temporary files that should not be included in the repo
+
+*~
+*.swp
+*.pid
+*.sqlite3
+
+log/*
+tmp/*
